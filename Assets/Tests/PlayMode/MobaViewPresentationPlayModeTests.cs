@@ -21,7 +21,7 @@ namespace ArknightsFrontline.Tests.PlayMode
         public IEnumerator SetUp()
         {
             previousTimeScale = Time.timeScale;
-            SceneManager.LoadScene("PrototypeArena");
+            DefaultCharacterSelection.LoadScene("PrototypeArena");
             yield return null;
             Time.timeScale = 0f;
         }

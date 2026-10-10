@@ -16,6 +16,7 @@ namespace ArknightsFrontline.Combat
         private int sequenceInterruptionVersion;
 
         public CombatUnit CurrentTarget => target;
+        public bool UsesExternalDamage { get; set; }
         public bool IsOwnedSequenceRunning => activePlan != null && executor != null && executor.IsRunning;
         public int SequenceInterruptionVersion => sequenceInterruptionVersion;
 
@@ -254,7 +255,7 @@ namespace ArknightsFrontline.Combat
 
         private void SpawnProjectile(CombatUnit attacker, CombatUnit attackTarget)
         {
-            if (!Application.isPlaying || executor != null)
+            if (!Application.isPlaying || executor != null || UsesExternalDamage)
             {
                 return;
             }

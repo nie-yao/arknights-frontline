@@ -367,7 +367,7 @@ namespace ArknightsFrontline.Tests.PlayMode
             Assert.That(exitCallCount, Is.EqualTo(1));
             Assert.That(previousArena.Votes.IsExitApproved, Is.True);
 
-            AsyncOperation reload = SceneManager.LoadSceneAsync(ScenePath, LoadSceneMode.Single);
+            AsyncOperation reload = DefaultCharacterSelection.LoadSceneAsync(ScenePath, LoadSceneMode.Single);
             Assert.That(reload, Is.Not.Null);
             while (!reload.isDone)
             {
@@ -458,7 +458,7 @@ namespace ArknightsFrontline.Tests.PlayMode
 
         private static IEnumerator LoadSavedArena()
         {
-            AsyncOperation load = SceneManager.LoadSceneAsync(ScenePath, LoadSceneMode.Single);
+            AsyncOperation load = DefaultCharacterSelection.LoadSceneAsync(ScenePath, LoadSceneMode.Single);
             Assert.That(load, Is.Not.Null, $"Could not load saved scene '{ScenePath}'.");
             while (!load.isDone)
             {

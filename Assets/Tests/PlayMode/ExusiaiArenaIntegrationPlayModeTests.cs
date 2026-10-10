@@ -32,7 +32,7 @@ namespace ArknightsFrontline.Tests.PlayMode
         {
             oldScale = Time.timeScale; oldCapture = Time.captureFramerate;
             Time.timeScale = 1; Time.captureFramerate = 60;
-            SceneManager.LoadScene("PrototypeArena"); yield return null;
+            DefaultCharacterSelection.LoadScene("PrototypeArena"); yield return null;
             roster = Object.FindFirstObjectByType<OperatorRosterController>();
             playerSlot = roster.Slots.Single(s => s.IsPlayerControlled); player = playerSlot.CurrentOperator;
             Assert.That(player.GetComponent<ExusiaiCombatPresentation>(), Is.Not.Null, "Saved player scene has no formal model bridge");
@@ -50,7 +50,7 @@ namespace ArknightsFrontline.Tests.PlayMode
         {
             // InputTestFixture replaces the Input System after UnitySetUp on some runners.
             // Recreate action maps against the fixture's devices, as the existing skill tests do.
-            SceneManager.LoadScene("PrototypeArena"); yield return null;
+            DefaultCharacterSelection.LoadScene("PrototypeArena"); yield return null;
             roster = Object.FindFirstObjectByType<OperatorRosterController>();
             playerSlot = roster.Slots.Single(s => s.IsPlayerControlled); player = playerSlot.CurrentOperator;
             Assert.That(player.GetComponent<PlayerCommandController>().InputActions.FindAction("Skill2").controls.Contains(keyboard.eKey), Is.True);

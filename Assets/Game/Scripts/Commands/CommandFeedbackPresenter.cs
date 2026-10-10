@@ -16,6 +16,7 @@ namespace ArknightsFrontline.Commands
         private Texture2D circleTexture;
         private bool isHoverCursorActive;
         private ExusiaiSkillController skillController;
+        private NiuLaiSkillController niuLaiSkills;
 
         public bool IsAttackRangeVisible { get; private set; }
 
@@ -27,6 +28,7 @@ namespace ArknightsFrontline.Commands
         {
             combatUnit = GetComponent<CombatUnit>();
             commandController = GetComponent<PlayerCommandController>();
+            niuLaiSkills = GetComponent<NiuLaiSkillController>();
             CreateRangeRing();
             circleTexture = CreateCircleTexture();
         }
@@ -94,7 +96,8 @@ namespace ArknightsFrontline.Commands
                     || skillController.BlocksNormalCommands);
             IsAttackRangeVisible = commandController != null
                 && commandController.IsAttackMoveHeld
-                && !blockedBySkill;
+                && !blockedBySkill
+                && (niuLaiSkills == null || (niuLaiSkills.CanShowIndicators && !niuLaiSkills.BlocksAttackMove));
             rangeRing.enabled = IsAttackRangeVisible;
             if (!IsAttackRangeVisible)
             {

@@ -1,0 +1,23 @@
+{
+  "bones": 15,
+  "vertices": 44555,
+  "unweighted_vertices": 0,
+  "actions": {
+    "Attack": [
+      1.0,
+      18.0
+    ],
+    "Idle": [
+      1.0,
+      60.0
+    ],
+    "Run": [
+      1.0,
+      24.0
+    ],
+    "Flight": [
+      1,
+      90
+    ]
+  }
+}

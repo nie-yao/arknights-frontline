@@ -23,7 +23,8 @@ namespace ArknightsFrontline.Common
     {
         Exusiai = 0,
         Eyjafjalla = 1,
-        SilverAsh = 2
+        SilverAsh = 2,
+        NiuLai = 3
     }
 
     public enum MatchState

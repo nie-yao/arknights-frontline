@@ -58,6 +58,8 @@ namespace ArknightsFrontline.Arena
 
         private void InitializePresentation()
         {
+            var selection = GetComponent<PlayerCharacterSelection>();
+            if (selection != null && selection.IsPending) return;
             if (isInitialized)
             {
                 return;
@@ -85,6 +87,11 @@ namespace ArknightsFrontline.Arena
                 playerStableKey,
                 exitAction);
             isInitialized = true;
+        }
+
+        private void Update()
+        {
+            if (hasStarted && !isInitialized) InitializePresentation();
         }
     }
 }

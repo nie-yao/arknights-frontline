@@ -28,7 +28,7 @@ namespace ArknightsFrontline.Tests.PlayMode
         [UnityTest]
         public IEnumerator PrototypeArenaSpawnsBalancedWaveThatAdvances()
         {
-            SceneManager.LoadScene("PrototypeArena");
+            DefaultCharacterSelection.LoadScene("PrototypeArena");
             yield return null;
 
             CombatUnit[] minions = Object.FindObjectsByType<CombatUnit>(FindObjectsSortMode.None)

@@ -34,7 +34,7 @@ namespace ArknightsFrontline.Tests.PlayMode
         [UnityTest]
         public IEnumerator SavedArenaBootstrapsSixOperatorsFromInactiveTemplates()
         {
-            SceneManager.LoadScene("PrototypeArena");
+            DefaultCharacterSelection.LoadScene("PrototypeArena");
             yield return null;
 
             OperatorRosterController roster = Object.FindFirstObjectByType<OperatorRosterController>();
@@ -193,7 +193,7 @@ namespace ArknightsFrontline.Tests.PlayMode
         [UnityTest]
         public IEnumerator PrototypeArenaContainsRequiredRoots()
         {
-            SceneManager.LoadScene("PrototypeArena");
+            DefaultCharacterSelection.LoadScene("PrototypeArena");
             yield return null;
             ArenaBootstrap arena = Object.FindFirstObjectByType<ArenaBootstrap>();
             Assert.That(arena, Is.Not.Null);
@@ -252,7 +252,7 @@ namespace ArknightsFrontline.Tests.PlayMode
         [UnityTest]
         public IEnumerator SavedTowerControllerRebindsAndTargetsNearbyEnemy()
         {
-            SceneManager.LoadScene("PrototypeArena");
+            DefaultCharacterSelection.LoadScene("PrototypeArena");
             yield return null;
 
             ArenaBootstrap arena = Object.FindFirstObjectByType<ArenaBootstrap>();
@@ -271,7 +271,7 @@ namespace ArknightsFrontline.Tests.PlayMode
         [UnityTest]
         public IEnumerator SavedOutcomeControllerResolvesDestroyedTower()
         {
-            SceneManager.LoadScene("PrototypeArena");
+            DefaultCharacterSelection.LoadScene("PrototypeArena");
             yield return null;
 
             ArenaBootstrap arena = Object.FindFirstObjectByType<ArenaBootstrap>();
@@ -322,7 +322,7 @@ namespace ArknightsFrontline.Tests.PlayMode
         [UnityTest]
         public IEnumerator SavedPlayerDeathCreatesGroundedCorpseWithoutRuntimeConfigure()
         {
-            SceneManager.LoadScene("PrototypeArena");
+            DefaultCharacterSelection.LoadScene("PrototypeArena");
             yield return null;
 
             GameObject player = GameObject.Find("Player_Exusiai");
@@ -358,7 +358,7 @@ namespace ArknightsFrontline.Tests.PlayMode
         [UnityTest]
         public IEnumerator SavedEnemyOperatorDeathCreatesGroundedCorpse()
         {
-            SceneManager.LoadScene("PrototypeArena");
+            DefaultCharacterSelection.LoadScene("PrototypeArena");
             yield return null;
 
             GameObject enemyOperator = GameObject.Find("Red_Exusiai");
@@ -389,7 +389,7 @@ namespace ArknightsFrontline.Tests.PlayMode
         [UnityTest]
         public IEnumerator OperatorRegistryDoesNotRetainCorpseAcrossSceneReload()
         {
-            SceneManager.LoadScene("PrototypeArena");
+            DefaultCharacterSelection.LoadScene("PrototypeArena");
             yield return null;
 
             GameObject player = GameObject.Find("Player_Exusiai");
@@ -406,7 +406,7 @@ namespace ArknightsFrontline.Tests.PlayMode
                 yield return null;
             }
 
-            SceneManager.LoadScene("PrototypeArena", LoadSceneMode.Single);
+            DefaultCharacterSelection.LoadScene("PrototypeArena", LoadSceneMode.Single);
             yield return null;
             GameObject reloadedPlayer = GameObject.Find("Player_Exusiai");
             Assert.That(reloadedPlayer, Is.Not.Null);

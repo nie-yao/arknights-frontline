@@ -91,6 +91,17 @@ namespace ArknightsFrontline.Arena
                 throw new InvalidOperationException("The saved arena requires six operator slot configurations.");
             }
 
+            PlayerCharacterSelection selection = GetComponent<PlayerCharacterSelection>();
+            if (selection != null)
+            {
+                selection.Configure(StartSelectedMatch);
+                return;
+            }
+            StartSelectedMatch(null);
+        }
+
+        private void StartSelectedMatch(GameObject selectedTemplate)
+        {
             foreach (ArenaOperatorSlotConfiguration configuration in slots)
             {
                 if (configuration == null)
@@ -101,8 +112,8 @@ namespace ArknightsFrontline.Arena
                 roster.RegisterSlot(
                     configuration.StableKey,
                     configuration.Team,
-                    configuration.OperatorType,
-                    configuration.Template,
+                    configuration.IsPlayerControlled && selectedTemplate != null ? OperatorType.NiuLai : configuration.OperatorType,
+                    configuration.IsPlayerControlled && selectedTemplate != null ? selectedTemplate : configuration.Template,
                     configuration.DeploymentPosition,
                     configuration.IsPlayerControlled);
             }

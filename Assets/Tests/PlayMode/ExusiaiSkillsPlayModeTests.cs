@@ -64,7 +64,7 @@ namespace ArknightsFrontline.Tests.PlayMode
                     yield return null;
                 }
             }
-            SceneManager.LoadScene("PrototypeArena");
+            DefaultCharacterSelection.LoadScene("PrototypeArena");
             yield return null;
         }
 
@@ -229,7 +229,7 @@ namespace ArknightsFrontline.Tests.PlayMode
                 }
             }
 
-            SceneManager.LoadScene("PrototypeArena");
+            DefaultCharacterSelection.LoadScene("PrototypeArena");
             yield return null;
         }
 

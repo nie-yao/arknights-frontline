@@ -73,6 +73,7 @@ namespace ArknightsFrontline.Commands
             input.Stop.performed += OnStop;
             input.Cancel.performed += OnCancel;
             input.Skill2.performed += OnSkill2;
+            input.Skill1.performed += OnSkill1;
             input.Skill3.performed += OnSkill3;
             input.Retreat.performed += OnRetreat;
             input.CenterCamera.performed += OnCenterCamera;
@@ -111,6 +112,7 @@ namespace ArknightsFrontline.Commands
             input.Stop.performed -= OnStop;
             input.Cancel.performed -= OnCancel;
             input.Skill2.performed -= OnSkill2;
+            input.Skill1.performed -= OnSkill1;
             input.Skill3.performed -= OnSkill3;
             input.Retreat.performed -= OnRetreat;
             input.CenterCamera.performed -= OnCenterCamera;
@@ -355,6 +357,12 @@ namespace ArknightsFrontline.Commands
 
             CancelAttackMove();
             ConsumeCancelInput(context.control);
+        }
+
+        private void OnSkill1(UnityEngine.InputSystem.InputAction.CallbackContext context)
+        {
+            if (!IsRetreatGuiding && skillInputHandler is NiuLaiSkillController cow)
+                cow.ActivateEmpower();
         }
 
         private void OnSkill2(UnityEngine.InputSystem.InputAction.CallbackContext context)

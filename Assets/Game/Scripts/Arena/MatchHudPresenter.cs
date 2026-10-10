@@ -673,6 +673,8 @@ namespace ArknightsFrontline.Arena
                     return "艾雅法拉";
                 case OperatorType.SilverAsh:
                     return "银灰";
+                case OperatorType.NiuLai:
+                    return "牛来";
                 default:
                     return operatorType.ToString();
             }

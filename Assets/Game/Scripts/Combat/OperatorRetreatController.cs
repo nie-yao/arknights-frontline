@@ -79,7 +79,8 @@ namespace ArknightsFrontline.Combat
         public bool TryBegin()
         {
             Configure();
-            if (!CanBegin() || dash != null && dash.IsDashing)
+            if (!CanBegin() || dash != null && dash.IsDashing
+                || GetComponent<NiuLaiSkillController>() is NiuLaiSkillController cow && cow.IsFlying)
             {
                 return false;
             }

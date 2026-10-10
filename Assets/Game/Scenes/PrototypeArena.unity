@@ -702,6 +702,7 @@ GameObject:
   - component: {fileID: 435872639}
   - component: {fileID: 435872638}
   - component: {fileID: 435872637}
+  - component: {fileID: 435872645}
   m_Layer: 0
   m_Name: ArenaBootstrap
   m_TagString: Untagged
@@ -898,6 +899,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: ArknightsFrontline.Runtime::ArknightsFrontline.Arena.ArenaBootstrap
   blueTower: {fileID: 461066847}
   redTower: {fileID: 614312756}
+--- !u!114 &435872645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 435872635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea754c53f7ce5284d93884dd2e28f05c, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: ArknightsFrontline.Runtime::ArknightsFrontline.Arena.PlayerCharacterSelection
 --- !u!1 &461066846
 GameObject:
   m_ObjectHideFlags: 0

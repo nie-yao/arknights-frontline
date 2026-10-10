@@ -38,7 +38,7 @@ namespace ArknightsFrontline.Tests.PlayMode
         [UnityTest]
         public IEnumerator PrototypeArenaContainsControllablePlayerAndCameraCenteringTarget()
         {
-            SceneManager.LoadScene("PrototypeArena");
+            DefaultCharacterSelection.LoadScene("PrototypeArena");
             yield return null;
 
             GameObject player = GameObject.Find("Player_Exusiai");
@@ -61,7 +61,7 @@ namespace ArknightsFrontline.Tests.PlayMode
         [UnityTest]
         public IEnumerator PrototypeArenaContainsRedGroundOperator()
         {
-            SceneManager.LoadScene("PrototypeArena");
+            DefaultCharacterSelection.LoadScene("PrototypeArena");
             yield return null;
 
             GameObject redOperator = GameObject.Find("Red_Exusiai");
